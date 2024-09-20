@@ -39,6 +39,7 @@ class PdfController extends Controller
         $pdf = PDF::loadView('badge', [
             'name' => $customer->name,
             'role' => $customer->role,
+            'expiration' => $customer->expiration,
             'title' => 'Badge' . $customer->name,
             'qrcode' => $qrcode,
         ])->setPaper('a5');

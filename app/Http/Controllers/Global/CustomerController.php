@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use Inertia\Response;
+use Illuminate\Support\Carbon;
 
 class CustomerController extends Controller
 {
@@ -41,7 +42,7 @@ class CustomerController extends Controller
                 'pageTitle' => 'Create Student',
                 'pageDescription' => '',
                 'pageData' => null,
-                'specialitiesList' => ['Infirmier', 'Sage Femme', 'Technicien de santé'],
+                'specialitiesList' => ['Infirmier / Nurse', 'Sage-femme / Midwife', 'Technicien médico-sanitaire / Health Technician'],
                 'formUrl' => route('dashboard.global.customers.storeUpdate')
             ]);
         } catch (Exception $exception) {
@@ -61,7 +62,7 @@ class CustomerController extends Controller
                 'pageTitle' => 'Edit Student',
                 'pageDescription' => '',
                 'pageData' => $getCustomerInfo,
-                'specialitiesList' => ['Infirmier', 'Sage Femme', 'Technicien de santé'],
+                'specialitiesList' => ['Infirmier / Nurse', 'Sage-femme / Midwife', 'Technicien médico-sanitaire / Health Technician'],
                 'formUrl' => route('dashboard.global.customers.storeUpdate', $userId)
             ]);
         } catch (Exception $exception) {
@@ -85,6 +86,8 @@ class CustomerController extends Controller
             'certificate' => $request->certificate,
             'certifdate' => $request->certifdate,
             'role' => $request->role,
+            'code' => $request->code,
+            'expiration' => $request->expiration,
             'speciality' => $request->speciality,
             'certificate_id' => $request->certificate_id || '',
             'badge_id' => $request->badge_id || '',
@@ -103,7 +106,8 @@ class CustomerController extends Controller
     public function setCert($user_id)
     {
         Customer::where('id', $user_id)->update([
-            'certificate_id' => 'true'
+            'certificate_id' => 'true',
+            'certificate_date' => Carbon::now(),
         ]);
         ;
         return redirect()->route('dashboard.global.customers.list');
@@ -111,9 +115,12 @@ class CustomerController extends Controller
     public function setBadge($user_id)
     {
         Customer::where('id', $user_id)->update([
-            'badge_id' => 'true'
+            'badge_id' => 'true',
+            'badge_date' => Carbon::now(),
+
         ]);
         ;
         return redirect()->route('dashboard.global.customers.list');
     }
+  
 }

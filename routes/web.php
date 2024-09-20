@@ -38,7 +38,9 @@ Route::group([
 ], function () {
     Route::get('/', function () {
         return Inertia::render('Dashboard',[
-            'countUrl'=> route('customers.count')
+            'countUrl'=> route('customers.count'),
+            'certifChartUrl'=> route('customers.certifChart'),
+            'badgeChartUrl'=> route('customers.badgeChart'),
         ]);
     })->name('dashboard');
 

@@ -15,6 +15,8 @@ export default function Form({ auth, pageTitle, pageDescription, pageData, speci
         certifdate: (pageData !== null) ? pageData.certifdate : '',
         speciality: (pageData !== null) ? pageData.speciality : '',
         role: (pageData !== null) ? pageData.role : '',
+        code: (pageData !== null) ? pageData.code : '',
+        expiration: (pageData !== null) ? pageData.expiration : '',
 
     });
 
@@ -41,6 +43,23 @@ export default function Form({ auth, pageTitle, pageDescription, pageData, speci
                 </div>
                 <form onSubmit={submit} className="space-y-6">
                     <div className={`grid grid-cols-2 gap-4 py-4`}>
+                        <div>
+                            <InputLabel htmlFor="code" value="Certificate number"
+                                className="block text-sm font-medium leading-6 text-gray-900" />
+                            <div className="mt-2">
+                                <TextInput
+                                    id="code"
+                                    name="code"
+                                    type="number"
+                                    value={data.code}
+                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    autoComplete="code"
+                                    isFocused={true}
+                                    onChange={(e) => setData('code', e.target.value)}
+                                />
+                            </div>
+                            <InputError message={errors.code} className="mt-2" />
+                        </div>
                         <div>
                             <InputLabel htmlFor="name" value="Name"
                                 className="block text-sm font-medium leading-6 text-gray-900" />
@@ -157,6 +176,21 @@ export default function Form({ auth, pageTitle, pageDescription, pageData, speci
                                 />
                             </div>
                             <InputError message={errors.role} className="mt-2" />
+                        </div>
+                        <div>
+                            <InputLabel htmlFor="expiration" value="Badge expiry date"
+                                className="block text-sm font-medium leading-6 text-gray-900" />
+                            <div className="mt-2">
+                                <TextInput
+                                    id="expiration"
+                                    name="expiration"
+                                    type='date'
+                                    value={data.expiration}
+                                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    onChange={(e) => setData('expiration', e.target.value)}
+                                />
+                            </div>
+                            <InputError message={errors.expiration} className="mt-2" />
                         </div>
                     </div>
                     <div className="flex items-center justify-end align-middle gap-2 pt-3 border-t">

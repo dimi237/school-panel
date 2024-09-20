@@ -26,6 +26,8 @@ class CustomerResource extends JsonResource
             'certificate_id'    => $this->certificate_id,
             'badge_id'    => $this->badge_id,
             'role'    => $this->role,
+            'code'    => $this->code,
+            'expiration'    => $this->expiration,
             'created_at' => Carbon::parse($this->created_at)->toDateString(),
             'updated_at' => Carbon::parse($this->updated_at)->toDateString(),
         ];

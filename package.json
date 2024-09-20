@@ -22,8 +22,8 @@
     },
     "dependencies": {
         "@heroicons/react": "^2.0.18",
-        "jspdf": "^2.5.2",
-        "react-qr-code": "^2.0.15",
+        "chart.js": "^4.4.4",
+        "react-chartjs-2": "^5.2.0",
         "sweetalert2": "^11.7.20",
         "sweetalert2-react-content": "^5.0.7",
         "uuid": "^9.0.0"

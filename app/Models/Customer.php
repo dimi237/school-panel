@@ -18,5 +18,9 @@ class Customer extends Model
         'role',
         'certificate_id',
         'badge_id',
+        'expiration',
+        'badge_date',
+        'certificate_date',
+        'code',
     ];
 }

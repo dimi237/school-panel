@@ -51,6 +51,8 @@ Route::group([
     'prefix' => 'customers'
 ], function () {
     Route::get('/count/{att?}', [ApiController::class, 'count'])->name('count');
+    Route::get('/certifChart', [ApiController::class, 'certifChart'])->name('certifChart');
+    Route::get('/badgeChart', [ApiController::class, 'badgeChart'])->name('badgeChart');
 });
 
 

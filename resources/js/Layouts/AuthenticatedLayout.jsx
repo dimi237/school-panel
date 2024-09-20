@@ -13,7 +13,7 @@ import {v1 as uuidv1} from "uuid";
 const mainMenu = [
     {id: 1,name: 'Dashboard', href: '/dashboard/', icon: HomeIcon, routeName: 'dashboard'},
     {id: 2,name: 'Users', href: '/dashboard/global/users/list', icon: UserGroupIcon, routeName: 'dashboard.global.users.list'},
-    {id: 3,name: 'Students', href: '/dashboard/global/customers/list', icon: ShieldCheckIcon, routeName: 'dashboard.global.customers.list'},
+    {id: 3,name: 'Generate attestation', href: '/dashboard/global/customers/list', icon: ShieldCheckIcon, routeName: 'dashboard.global.customers.list'},
 ]
 
 function classNames(...classes) {

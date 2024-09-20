@@ -36,9 +36,9 @@ export default function List({ auth, pageTitle, pageDescription, setBadgeUrl, se
                 </div>
                 <div className="mt-8 flow-root">
                     <DataTable
-                        excludedColumns={['id']}
+                        excludedColumns={[]}
                         fetchUrl={route('fetch.customers')}
-                        columns={["id", "name", "birthdate", "birthplace", 'certificate', 'certifdate', 'speciality', 'role', "created_at", "updated_at"]}
+                        columns={["code", "name", "birthdate", "birthplace", 'certificate', 'certifdate', 'speciality', 'role', "created_at", "updated_at"]}
                         columNames={["id", "name", "birth_date", "birth_place", 'certificate', 'certification_date', 'speciality', 'role', "created_at", "updated_at"]}
                         actionUrls={actionUrls}
                     ></DataTable>
