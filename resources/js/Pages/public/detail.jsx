@@ -4,7 +4,7 @@ import ApplicationLogo from '@/Components/ApplicationLogo';
 export default function Details({ customer }) {
     return (
         <GuestLayout>
-            <Head title="Student Details" />
+            <Head title="Member Details" />
             <ApplicationLogo className="w-48 h-48 fill-current text-gray-500 mx-auto" />
             <div className="my-4 text-sm text-gray-600 border-gray-500 border-2 border-solid rounded-2xl p-10 ">
                 <div className="flex flex-col items-center space-y-4">

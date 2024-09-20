@@ -22,7 +22,7 @@ class CustomerController extends Controller
         try {
             return Inertia::render('global/Customers/List', [
                 'user' => $request->user(),
-                'pageTitle' => 'Student List',
+                'pageTitle' => 'Member List',
                 'pageDescription' => 'A list of all the students in the system.',
                 'setBadgeUrl' => route('dashboard.global.customers.setBadge'),
                 'setCertUrl' => route('dashboard.global.customers.setCert')
@@ -39,7 +39,7 @@ class CustomerController extends Controller
         try {
             return Inertia::render('global/Customers/Form', [
                 'user' => $request->user(),
-                'pageTitle' => 'Create Student',
+                'pageTitle' => 'Create Member',
                 'pageDescription' => '',
                 'pageData' => null,
                 'specialitiesList' => ['Infirmier / Nurse', 'Sage-femme / Midwife', 'Technicien médico-sanitaire / Health Technician'],
@@ -59,7 +59,7 @@ class CustomerController extends Controller
             $getCustomerInfo = Customer::where('id', $userId)->first();
             return Inertia::render('global/Customers/Form', [
                 'user' => $request->user(),
-                'pageTitle' => 'Edit Student',
+                'pageTitle' => 'Edit Member',
                 'pageDescription' => '',
                 'pageData' => $getCustomerInfo,
                 'specialitiesList' => ['Infirmier / Nurse', 'Sage-femme / Midwife', 'Technicien médico-sanitaire / Health Technician'],

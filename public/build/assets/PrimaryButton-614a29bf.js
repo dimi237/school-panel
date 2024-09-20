@@ -1,0 +1,1 @@
+import{a as r}from"./app-58bbce8c.js";function s({className:o="",disabled:t,children:a,...n}){return r("button",{...n,className:`transition ease-in-out duration-150 ${t&&"opacity-25"} `+o,disabled:t,children:a})}export{s as P};
