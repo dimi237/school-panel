@@ -23,7 +23,7 @@ class CustomerController extends Controller
             return Inertia::render('global/Customers/List', [
                 'user' => $request->user(),
                 'pageTitle' => 'Member List',
-                'pageDescription' => 'A list of all the students in the system.',
+                'pageDescription' => 'A list of all the members.',
                 'setBadgeUrl' => route('dashboard.global.customers.setBadge'),
                 'setCertUrl' => route('dashboard.global.customers.setCert')
             ]);
