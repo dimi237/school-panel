@@ -1,0 +1,1 @@
+import{a as s}from"./app-5a349bc2.js";function m({children:e}){return s("div",{className:"flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8 h-screen",children:s("div",{className:"mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]",children:e})})}export{m as G};

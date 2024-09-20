@@ -5,9 +5,6 @@ import { ChevronDownIcon, ChevronUpIcon, PencilSquareIcon, TrashIcon, AcademicCa
 import { Link, useForm } from "@inertiajs/react";
 import Swal from 'sweetalert2';
 import { v1 as uuidv1 } from 'uuid';
-import jsPDF from 'jspdf';
-import ReactDOMServer from 'react-dom/server';
-import { Cert1Template, Cert2Template, BadgeTemplate } from './Template'
 const SORT_ASC = "asc"
 const SORT_DESC = "desc"
 
