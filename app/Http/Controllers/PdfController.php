@@ -15,7 +15,7 @@ class PdfController extends Controller
         $qrcode = base64_encode(QrCode::size(200)->errorCorrection('H')->generate(route('details', $request->route('id'))));
 
         $pdf = PDF::loadView('attestation', [
-            'id' => $customer->id,
+            'id' => $customer->code,
             'name' => $customer->name,
             'birthdate' => $customer->birthdate,
             'birthplace' => $customer->birthplace,
